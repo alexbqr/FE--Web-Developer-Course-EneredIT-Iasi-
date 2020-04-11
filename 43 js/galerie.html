@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<head>
+    <title>Galerie</title>
+    <style>
+        body {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            font-family: helvetica;
+            background-color:rgba(0, 0, 0, 0.5)
+        }
+
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            width: 1380px; 
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .container {
+            position: relative;
+            border-radius: 10px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgb(0, 102, 255, 0.7);
+            margin: 20px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease-in;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .container:hover {
+            background-color: rgb(128, 179, 255);
+        }
+
+        .img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            filter: grayscale(25%);
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            max-height: 250px;
+            max-width: 250px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .summary {
+            position: absolute;
+            bottom: -70px;
+            left: -1px;
+            width: 300px;
+            height: 70px;
+            margin: 0 auto;
+            padding-left: 5px;
+            padding-right: 5px;
+            border: 1px solid rgb(0, 102, 255, 0.7);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background-color: rgb(0, 102, 255, 0.7);
+            box-sizing: border-box;
+            transition: bottom 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            z-index: 2;
+        }
+
+        .header, .header-modal {
+            font-size: 18px;
+            color: rgb(0, 45, 129);
+            padding-top: 5px;
+            margin: 0;
+        }
+
+        .text, .text-modal {
+            display: inline-block;
+            font-size: 15px;
+            color: rgb(0, 45, 129);
+            width: 100%;
+            padding-top: 3px;
+            margin: 0;
+        }
+
+        .container:hover .summary {
+            bottom: -1px;
+            left: -1px;
+        }
+
+        .container-modal-image {
+            position: relative;
+            background-color:  rgb(0, 45, 129, 0.5);
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+        }
+
+        .img-modal {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            filter: grayscale(25%);
+            transform: translate(-50%, -50%);
+            max-width: 800px;
+            max-height: 800px;
+            border: 3px white solid;
+            border-radius: 10px;
+        }
+
+        .summary-modal {
+            display:none;
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: rgb(0, 45, 129);
+            font-size: 30px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var header = ["Ronnie", "Collie", "Max", "Loki", "Rocky", "Rocco"];
+        var text = ["Contrary to popular belief", "All the Lorem Ipsum generators", "Lorem Ipsum is therefore always free", "If you are going to use a passage of Lorem Ipsum", "The standard chunk of Lorem Ipsum used since the 1500s", "Many desktop publishing packages and web page editors"];
+        function start() {
+            var mainContainer = document.createElement("div");
+            mainContainer.className = "main-container";
+            document.body.appendChild(mainContainer);
+            for (let i = 0; i < 6; i++) {
+                imageContainer = new ImageContainer(header[i], text[i]);
+                mainContainer.appendChild(imageContainer.container);
+            }
+        }
+
+        class ImageContainer {
+    imageUrl = ''
+    header = ''
+    text = ''
+    constructor(header, text) {
+        this.createImage();
+        this.createContainer();
+        this.getImage();
+        this.bottomDescription(header, text);
+    }
+
+    createImage() {
+        this.imgElement = document.createElement("img");
+        this.imgElement.className = "img";
+    }
+
+    createContainer() {
+        this.container = document.createElement("div");
+        this.container.className = "container";
+        this.container.addEventListener("click", this.clickOnContainer.bind(this));
+    }
+
+    getImage() {
+        fetch('https://dog.ceo/api/breeds/image/random')
+            .then((response) => {
+                return response.json();
+            })
+            .then((myJson) => {
+                this.displayImage(myJson);
+            });
+    }
+
+    displayImage(data) {
+        this.imgElement.setAttribute("src", data.message);
+        this.container.appendChild(this.imgElement);
+        this.imageUrl = data.message;
+    }
+
+    bottomDescription(header, text) {
+        this.header = header
+        this.text = text
+        this.bottomDiv = document.createElement("div");
+        this.bottomDiv.className = "summary";
+        this.headerElement = document.createElement("h1");
+        this.headerElement.innerText = header;
+        this.headerElement.className = "header";
+        this.textElement = document.createElement("span");
+        this.textElement.innerText = text;
+        this.textElement.className = "text";
+        this.bottomDiv.appendChild(this.headerElement);
+        this.bottomDiv.appendChild(this.textElement);
+        this.container.appendChild(this.bottomDiv);
+    }
+
+    createModalImageContainer() {
+        this.modalImageContainer = document.createElement("div");
+        this.modalImageContainer.className = "container-modal-image";
+        var imageElement = document.createElement("img");
+        imageElement.className = "img-modal";
+        imageElement.setAttribute("src", this.imageUrl);
+        this.modalImageContainer.appendChild(imageElement);
+        var bottomDiv = document.createElement("div");
+        bottomDiv.className = "summary-modal";
+        this.modalImageContainer.appendChild(bottomDiv);
+        var headerElement = document.createElement("h1");
+        headerElement.innerText = this.header;
+        headerElement.className = "header-modal";
+        bottomDiv.appendChild(headerElement);
+        var textElement = document.createElement("span");
+        textElement.innerText = this.text;
+        textElement.className = "text-modal";
+        bottomDiv.appendChild(textElement);
+        var closeButton = document.createElement("div");
+        closeButton.className = "close-button";
+        closeButton.innerText = "X";
+        this.modalImageContainer.appendChild(closeButton);
+        closeButton.addEventListener('click', this.closeModalImage.bind(this));
+        document.addEventListener('keydown', this.onKeyDown.bind(this));
+    }
+
+    onKeyDown(e) {
+        if (e.keyCode == 27) {
+            this.closeModalImage()
+        }
+    }
+
+    clickOnContainer() {
+        this.createModalImageContainer()
+        document.body.appendChild(this.modalImageContainer)
+    }
+
+    closeModalImage() {
+        this.modalImageContainer.remove()
+    }
+}
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
