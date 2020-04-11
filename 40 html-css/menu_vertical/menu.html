@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menu_Vertical</title>
+        <style>
+            body{
+                font-size:0;
+                background-color: #333399;
+                margin:0;
+            }
+
+            .img{
+                position:absolute;
+                top:10%;
+                height:90%;
+                width:80%;
+                margin:0;
+                padding:0;          
+            }
+
+            .nav-bar{
+                width:20%;
+                height:10%;
+                font-size:40px;
+                font-family: Brush Script MT, Brush Script Std, cursive;
+                color:white;
+                float:right;
+                padding-top:10px;
+            }
+
+            .nav-bar-content{
+                position:absolute;
+                top:10%;
+                width:auto;
+                height:auto;
+            }
+            
+
+
+            .nav-bar a{
+                position:relative;
+                display:block;
+                font-size:13px;
+                width:500px;
+                height:50px;
+                text-decoration:none;           
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:white;   
+                padding:15px;
+                box-sizing: border-box;  
+                font-weight:bold;   
+                border: 1px solid #2d2d86;
+            }
+
+            .nav-bar a:hover{
+                background-color: #2d2d86;
+                color:orange;
+            }
+
+            @media screen and (max-width: 1463px){
+                .nav-bar{
+                    font-size:30px;
+                }
+
+                .nav-bar a{
+                    font-size:10px;
+                }
+            }
+
+            @media screen and (max-width: 1099px){
+                .nav-bar{
+                    font-size:20px;
+                }
+
+                .nav-bar a{
+                    font-size:10px;
+                }
+
+            }
+
+            @media screen and (max-width: 728px){
+                .nav-bar{
+                    font-size:15px;
+                }
+
+                .nav-bar a{
+                    font-size:8px;
+                }
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+        <img src="background.jpg" class="img">
+        <div class="nav-bar"><span>Curt's Special Recipe</span>
+            <div class="nav-bar-content">
+            <a href="#">HOME</a>
+            <a href="#">GALLERY</a>
+            <a href="#">WHERE TO BUY</a>
+            <a href="#">CONTACT</a>
+            <a href="#">SHOP</a>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

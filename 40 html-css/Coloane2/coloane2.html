@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coloane2</title>
+    <style>
+        body {
+            font-size: 0;
+        }
+
+        .header {
+            top: 50px;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            height: 200px;
+        }
+
+        .header-title {
+            font-size: 30px;
+            position: relative;
+            text-align: center;
+            top: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+        .header-text {
+            font-size: 20px;
+            position: relative;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+            top: 50px;
+            width: auto;
+            height: 600px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .img {
+            position: relative;
+            width: 100%;
+            height: 200px;
+        }
+
+        .tab {
+            display: inline-block;
+            margin: 4%;
+            width: 25.33%;
+            height: 500px;
+        }
+
+        .tab-title {
+            position: relative;
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+            top: 5%;
+        }
+
+        .tab-text {
+            position: relative;
+            text-align: center;
+            padding: 5px;
+            top: 20%;
+            font-size: 20px;
+            color:#595959;
+        }
+
+        .button {
+            position: relative;
+            top:150px;
+            left: 35%;
+            width:100px;
+            height:30px;
+            background-color:#e65c00;
+            font-weight: bold;
+            color:white;
+        }
+
+
+
+        @media screen and (max-width: 810px) {
+            .header-title {
+                font-size: 20px;
+            }
+
+
+            .header-text {
+                font-size: 15px;
+            }
+
+
+            .tab {
+                overflow: auto;
+                margin: 2%;
+                width: 29.33%;
+            }
+
+            .tab-title{
+                font-size:10px;
+            }
+
+            .tab-text{
+                font-size:10px;
+            }
+
+
+            .img {
+                position: absolute;
+                height: 200px;
+                width: 29.33%;
+            }
+        }
+
+        @media screen and (max-width: 810px){
+            .img{
+                width:170px;
+                height:50px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-title">What is Your Start-Up Idea</div>
+        <div class="header-text">From its medieval origins to the digital era, learn everything there is to know about
+            the ubiquitous lorem ipsum passage.
+            The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.)
+            that doesn't distract from the layout.</div>
+    </div>
+
+    <div class="container">
+        <div class="tab">
+            <img src="img1.jpg" class="img">
+            <div class="tab-title"> What is Your Start-Up Idea? Make it Best.</div>
+            <div class="tab-text">LOREM IPSUM DOLOR SIT AMET</div>
+            <button class="button">GET IT NOW</button>
+        </div>
+
+        <div class="tab">
+            <img src="img2.jpg" class="img">
+            <div class="tab-title"> What is Your Start-Up Idea? Make it Best.</div>
+            <div class="tab-text">LOREM IPSUM DOLOR SIT AMET</div>
+            <button class="button">GET IT NOW</button>
+        </div>
+
+        <div class="tab">
+            <img src="img3.jpg" class="img">
+            <div class="tab-title"> What is Your Start-Up Idea? Make it Best.</div>
+            <div class="tab-text">LOREM IPSUM DOLOR SIT AMET</div>
+            <button class="button">GET IT NOW</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
