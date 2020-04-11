@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Acordeon</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", start);
+    let list = [
+        {
+            tabName: "First-Tab",
+            body: "text"
+        },
+        {
+            tabName: "Second-Tab",
+            body: "text"
+        },
+        {
+            tabName: "Thrid-Tab",
+            body: "text"
+        },
+        {
+            tabName: "Fourth-Tab",
+            body: "text"
+        },
+        {
+            tabName: "Fifth-Tab",
+            body: "text"
+        },
+        {
+            tabName: "Sixth-Tab",
+            body: "text"
+        }
+    ];
+
+    function start() {
+        let container = document.createElement("div");
+        container.className = "container";
+        document.body.appendChild(container);
+        let button;
+        let tab;
+        let element;
+
+        for (let i = 0; i < list.length; i++) {
+            console.log(list[i].tabName);
+            tab = document.createElement("div");
+            element = document.createElement("div");
+            button = document.createElement("button");
+            button.className = "button";
+            button.innerHTML = "+";
+            element.className = "element";
+            tab.className = "tab";
+            tab.innerHTML = list[i].tabName;
+            element.innerHTML = list[i].body;
+            container.appendChild(tab);
+            container.appendChild(element);
+            tab.appendChild(button);
+            button.addEventListener("click", btnClick);
+        }
+
+        function btnClick() {
+            if (this.innerHTML === "-") {
+                this.innerHTML = "+";
+            } else {
+                this.innerHTML = "-";
+            }
+            let element = this.parentElement.nextElementSibling;
+            element.classList.toggle("dropdown");
+        }
+    }
+</script>
+<style>
+    .container {
+        display: inline-block;
+        width: 300px;
+        height: 250px;
+    }
+
+    .tab {
+        display: inline-block;
+        width: 300px;
+        height: 50px;
+        border: 1px solid gray;
+        padding: 15px;
+        box-sizing: border-box;
+        background-color:steelblue;
+    }
+
+    .button {
+        width: 25px;
+        height: 25px;
+        float: right;
+        background: rgb(117, 192, 253);
+    }
+
+    .element {
+        width: 300px;
+        height: 0;
+        opacity: 0;
+        transition: .3s;
+    }
+
+    .dropdown {
+        height: 50px;
+        background-color: rgb(0, 128, 128, 0.5);
+        opacity: 1;
+        border: 1px solid gray;
+        padding:15px;
+        box-sizing: border-box;
+    }
+</style>
+<body>
+
+
+
+
+
+
+
+</body>
+</html>
