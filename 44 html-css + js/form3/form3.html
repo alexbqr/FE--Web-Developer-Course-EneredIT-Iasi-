@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form3</title>
+        <style>
+            body{
+                font-size:0;
+                margin:0;
+                background-image: url(texture.jpg);
+            }
+
+            .container{
+                position:relative;
+                width:400px;
+                height:550px;
+                background-color: #ffb31a;
+                border-radius: 10px;
+                box-sizing:border-box;
+                padding:10px;
+                margin-left:50px;
+                margin-top:50px;
+                user-select:none;
+                color:#013280;
+            }
+
+            .title{
+                width:260px;
+                height:80px;
+                font-size:25px;
+                margin:20px 0px 10px 5px;
+                padding:10px;
+                box-sizing:border-box;
+                font-weight:bold;
+            }
+
+            .formA{
+                position:relative;
+                margin:0px 10px 10px 10px; 
+            }
+
+            .formA > input {
+                width:340px;
+                height:25px;
+                padding:10px;
+                border-radius:10px;
+                font-size:15px;       
+                outline:none;        
+            }
+
+            .formB{
+                position:relative;
+                display:inline-block;
+                margin:0px 10px 10px 10px;
+            }
+
+            .formB > input {
+                display:inline-block;
+                width:148px;
+                height:25px;
+                padding:10px;
+                border-radius:10px;
+                top:20px;
+                font-size:15px;
+                outline:none;
+            }
+
+            .formB > input:nth-child(1){
+                margin-right:8px;
+            }
+
+            .formB > input:nth-child(2){
+                margin-left:8px;
+            }
+
+            .button{
+                width:340px;
+                height:30px;
+                padding:10px;
+                border-radius:10px;
+                font-size:30px; 
+                background-color:#013280;
+                text-align:center;
+                margin-left:15px;
+                margin-top:20px;
+                font-weight: bold;
+                color:#ffb31a;
+            }
+
+            .button:hover{
+                background-color: #0451cc;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="title"> Complete the form for your salesforce needs</div>
+
+            <form class="formA">
+                <input type="text" id="needs" name="needs" placeholder="I need salesforce help with">
+            </form>
+            <form class="formB">
+                <input type="text" id="fname" name="fname" placeholder="First Name">
+                <input type="text" id="lname" name="lname" placeholder="Last Name">
+            </form>
+            <form class="formB">
+                <input type="text" id="email" name="email" placeholder="E-mail">
+                <input type="text" id="phone" name="phone" placeholder="Phone">
+            </form>
+            <form class="formA">
+                <input type="text" id="role" name="role" placeholder="Your Role">
+            </form>
+            <form class="formA">
+                <input type="text" id="company" name="company" placeholder="Company">
+            </form>
+            <form class="formA">
+                <input type="text" id="web-adress" name="web-adress" placeholder="Web Adress">
+            </form>
+
+            <div class="button">Submit</div>     
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form2</title>
+<style>
+    body{
+        font-size:0;
+        margin:0;
+        background-color:#6d39cc;
+        
+    }
+
+    .main-container{
+        width:850px;
+        height:500px;
+        border:1px solid #666666;
+        margin:3%;
+        user-select: none;
+        background-color:white;
+        -webkit-box-shadow: -1px 29px 34px -17px rgba(0,0,0,0.96);
+        -moz-box-shadow: -1px 29px 34px -17px rgba(0,0,0,0.96);
+        box-shadow: -1px 29px 34px -17px rgba(0,0,0,0.96);
+    }
+
+
+    .header{
+        position:relative;
+        width:96%;
+        height:70px;
+        left:2%;
+        z-index:2;
+        padding:10px;
+        box-sizing:border-box;
+    }
+
+    .icon {
+        position:absolute;
+        display:inline-block;
+        width:25%;
+        height:90%;
+        font-size:30px;
+        font-weight: bold;
+        color:#6d39cc;
+        box-sizing:border-box; 
+        padding:15px;  
+        top:5%;      
+    }
+
+
+    .header-menu1{
+        display:inline-block;
+        width:23%;
+        height:90%;
+        box-sizing:border-box;
+        padding:10px 0 10px 0;
+        color: #666666;
+        font-size:18px;
+        margin-left:25%;
+        text-align:right;      
+    }
+    .header-menu2{
+        display:inline-block;
+        width:18%;
+        height:90%;
+        padding:10px 0 10px 0;
+        box-sizing:border-box;
+        color: #666666;
+        font-size:18px;
+        text-align:center;
+    }
+    .header-menu3{
+        display:inline-block;
+        width:20%;
+        height:90%;        
+        box-sizing:border-box;
+        padding:10px 0 10px 0;
+        color: #666666;
+        font-size:18px;
+        text-align:left;
+    }
+
+    .header-menu1:hover, .header-menu2:hover, .header-menu3:hover{
+        color:#6d39cc;
+    }
+
+    .shopcart{
+        position:absolute;
+        width:65px;
+        height:50px;
+        right:10px;
+    }
+
+    .left-container{
+        position:relative;
+        display:inline-block;
+        width:48%;
+        height:420px;
+        margin:1%;
+        box-sizing:border-box;
+        padding:10px;
+        overflow: auto;
+    }
+    .right-container{
+        position:absolute;
+        display:inline-block;
+        width:48%;
+        height:420px;
+        box-sizing:border-box;
+        padding:10px;
+        overflow: auto;
+    }
+
+    .header-left-container{
+        position:relative;
+        width:60%;
+        height:30px;
+        padding:5px;
+        box-sizing: border-box;
+        font-size:20px;
+        font-weight: bold;
+        text-align:center;
+        margin-left:20%;
+        margin-bottom:10px;
+    }
+
+    .form1{
+        width:100%;
+        height:65px;
+        font-size:15px;
+        box-sizing: border-box;
+        padding:5px;
+    }
+
+    .form1 > label{        
+        position:absolute;
+        width:90px;
+        height:40px;
+        margin:5px;
+        display:inline-block;
+        color:#999999;  
+    }
+
+    .form1 > input{
+        position: relative;
+        height:30px;
+        width:49%;
+        padding:5px;
+        box-sizing: border-box;
+        display:inline-block;
+        top:25px;
+        border:1px solid #999999;
+        outline-color:#6d39cc;
+    }
+
+    .form2{
+        width:100%;
+        height:40px;
+        font-size:15px;
+        box-sizing: border-box;
+        padding:5px;
+        position:relative;
+    }
+
+    .form2 > label{        
+        position:absolute;
+        width:90px;
+        height:40px;
+        margin:5px;
+        display:inline-block;
+        color:#999999;        
+    }
+
+    .form2 > input{
+        position: relative;
+        height:30px;
+        width:100%;
+        padding:5px;
+        box-sizing: border-box;
+        display:inline-block;
+        top:25px;
+        border:1px solid #999999;
+        outline-color:#6d39cc;
+    }
+
+    .form3{
+        width:100%;
+        height:40px;
+        font-size:15px;
+        box-sizing: border-box;
+        padding:5px;
+        position:relative;
+        top:21px;
+    }
+
+    .form3 > label{        
+        position:absolute;
+        width:90px;
+        height:40px;
+        margin:5px;
+        display:inline-block;
+        color:#999999;  
+    }
+
+    .form3 > input{
+        position: relative;
+        height:30px;
+        width:100%;
+        padding:5px;
+        box-sizing: border-box;
+        display:inline-block;
+        top:25px;
+        border:1px solid #999999;
+        outline-color:#6d39cc;
+    }
+
+    .form4{
+        position:relative;
+        width:100%;
+        height:40px;
+        font-size:15px;
+        box-sizing: border-box;
+        padding:5px;
+        top:45px;
+    }
+
+    .form4 > label{  
+        position:absolute;
+        width:90px;
+        height:30px;
+        margin:5px;
+        display:inline-block;
+        color:#999999;
+    }
+
+    .form4 > input, select {
+        position: relative;
+        height:30px;
+        width:48%;
+        padding:5px;
+        box-sizing: border-box;
+        display:inline-block;
+        border:1px solid #999999;
+        top:25px;
+        outline-color:#6d39cc;
+    }
+
+    .form5{
+        width:100%;
+        height:40px;
+        font-size:15px;
+        box-sizing: border-box;
+        padding:5px;
+        position:relative;
+        top:70px;
+    }
+
+    .form5 > label{        
+        position:absolute;
+        width:90px;
+        height:40px;
+        margin:5px;
+        display:inline-block;
+        color:#999999;  
+    }
+
+    .form5 > input{
+        position: relative;
+        height:30px;
+        width:100%;
+        padding:5px;
+        box-sizing: border-box;
+        display:inline-block;
+        top:25px;
+        border:1px solid #999999;
+        outline-color:#6d39cc;
+    }
+
+    .header-right-container{
+        position:relative;
+        width:150px;
+        height:30px;
+        padding:5px;
+        box-sizing: border-box;
+        font-size:20px;
+        font-weight: bold;
+        text-align:center;
+        margin-top:10px;
+        margin-left:100px;
+    }
+
+    .under-title{
+        font-size:15px;
+        position:absolute;
+        width:90px;
+        height:20px;
+        margin:5px 5px 5px 20px;
+        display:inline-block;
+        color:#999999;
+        padding:5px;
+        box-sizing: border-box;
+        top:60px;
+    }
+
+    .boxes{
+        position:Relative;
+        width:100%;
+        height:150px;
+        padding:10px;
+        box-sizing: border-box;    
+        top:10px;    
+    }
+
+    .box1{
+        position:relative;
+        display:inline-block;
+        width:150px;
+        height:100px;
+        padding:15px;
+        box-sizing: border-box;
+        font-size:50px;
+        text-align:center;
+        color:#6d39cc;
+        border:1px solid #999999;   
+        overflow:hidden;  
+        margin-left:18px;  
+        margin-top:20px; 
+    }
+
+    .box1-sup{
+        font-size:30px;
+    }
+
+    .box1-span{
+        position:absolute;
+        bottom:10px;
+        font-size:15px;
+        left:30%;
+        color:#595959;
+        font-weight:bold;
+    }
+
+    .box2{
+        position:relative;
+        display:inline-block;
+        width:150px;
+        height:100px;
+        padding:15px;
+        box-sizing: border-box;
+        font-size:50px;
+        text-align:center;
+        overflow:auto;
+        color:#6d39cc;
+        border:1px solid #999999;  
+        margin-left:18px; 
+    }
+
+    .box2-sup{
+        font-size:30px;
+    }
+
+    .box2-span{
+        position:absolute;
+        bottom:10px;
+        font-size:15px;
+        left:30%;
+        color:#595959;
+        font-weight:bold;
+    }
+
+    .box1:hover, .box2:hover{
+        background-color:#6d39cc;
+        color:white;
+    }
+
+    .box1:hover > .box1-span{
+        color:#4c288f;
+    }
+    
+    
+    .box2:hover > .box2-span{
+        color:#4c288f;
+    }
+
+    .top-cont-footer{
+        width:300px;
+        height:50px;
+        font-size:15px;
+        margin-left:30px;
+
+    }
+
+    .top-cont-footer1-date{
+        position:relative;
+        display:inline-block;  
+        font-weight:bold;      
+    }
+
+    .lower-cont{
+        position:relative;
+        height:120px;
+        width:100%;
+    }
+
+    .form-checkbox{
+        position:absolute;
+        font-size:15px;
+        height:50px;
+        width:100%;
+    }
+
+    .form-checkbox > label{
+        position:absolute;
+        margin:0;
+    }
+
+    .button-order{
+        position:relative;
+        background-color:#6d39cc;
+        width:370px;
+        height:60px;
+        bottom:-62px;
+        padding:20px;
+        font-size:20px;
+        box-sizing: border-box;
+        text-align:center;
+        border:1px solid #666666;
+    }
+
+    .button-order:hover{
+        background-color:#4c288f;
+        color:white;
+    }
+
+</style>
+    </head>
+    <body>
+        <div class="main-container">
+        <div class="header">
+            <div class="icon">SHPPNG</div>
+            <div class="header-menu1">Shopping Bag ▶</div>
+            <div class="header-menu2">Checkout ▶ </div>
+            <div class="header-menu3">Confirmation</div> 
+            <img src="shopcart.png" class="shopcart">    
+        </div>
+
+        <div class="left-container">
+            <div class="header-left-container">Personal information</div>
+            <form class="form1">
+                <label for="fname">First name</label>
+                <input type="text" id="fname" name="fname">
+                <label for="lname">Last name</label>
+                <input type="text" id="lname" name="lname">
+            </form>
+            <form class="form2">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email">
+            </form>
+            <form class="form3">
+                <label for="street">Street</label>
+                <input type="text" id="street" name="street">
+            </form>
+            <form class="form4">
+                <label for="city">City</label>
+                <input type="text" id="country" name="city">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="Romania">Romania</option>
+                    <option value="Moldova">Moldova</option>
+                    <option value="Ucraina">Ucraina</option>
+                </select>                
+            </form>
+
+            <form class="form5">
+                <label for="phnumber">Phone number</label>
+                <input type="text"  id="phnumber" name="phnumber" value="+40 ">
+            </form>    
+        </div>
+
+        <div class="right-container">
+            <div class="top-cont"> 
+                <div class="header-right-container">Delivery</div>
+
+                <div class="under-title">Delivery Fee</div>
+
+                <div class="boxes">
+                    <div class="box1">0<sup class="box1-sup">$</sup>
+                        <span class="box1-span"> 3-4 weeks</span>
+                    </div>
+                    <div class="box2">5<sup class="box2-sup">$</sup>
+                        <span class="box2-span"> 2-5 days</span>
+                    </div>
+                </div>
+
+                <div class="top-cont-footer">
+                    <div class="top-cont-footer1"> Estimated delivery date:<div class="top-cont-footer1-date">August 4th.</div></div>
+                    <div class="top-cont-footer2"> Every package has a tracking number.</div>
+                </div>
+
+                
+            </div>
+
+
+
+            <div class="lower-cont"> 
+                <div>
+                    <form class="form-checkbox">
+                        <input type="checkbox" id="check1" name="check1" value="Check1">
+                        <label for="check1">Subscribe to our newsletter</label></br>
+                        <input type="checkbox" id="check2" name="check2" value="Check2">
+                        <label for="check2">Create an account</label>
+                    </form>
+                </div>
+
+                <div class="button-order"> Confirm my order</div>
+
+
+            </div>
+            
+        
+        
+        
+        </div>
+
+
+        </div>
+
+    </body>
+
+
+
+</html>

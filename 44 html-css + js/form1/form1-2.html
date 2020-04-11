@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form1</title>
+    <style>
+        body {
+            font-size: 0;
+            margin: 0;
+            background-image: url("wallpaper.jpg");
+        }
+
+        .shopping-cart{
+            position: absolute;
+            width: 300px;
+            height:100px;
+            background-color: #004d99;
+            right: 20px;
+            font-size: 20px;
+            top:20px;
+            text-decoration:none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding:30px;
+            box-sizing: border-box;
+            color:white;
+            z-index:1;
+            user-select: none;            
+        }
+
+        .shopping-cart:hover>.right-menu {
+            display: block;
+        }
+
+        .shopping-cart:hover>.contact {
+            display: block;
+        }    
+
+        @keyframes transition {
+            0% {opacity: 0;}
+            100% {opacity: 1}
+        }    
+
+        .right-menu {
+            position: absolute;
+            width: 300px;
+            height:450px;
+            background-color: #004d99;
+            right: 0;
+            top: 100px;
+            display: none;
+            animation: transition 1.5s ease-in;
+            z-index:2;
+        }               
+
+
+        .right-menu-elem{
+            position:relative;
+            top:0;
+            height:50px;
+            width:300px;
+            border:1px solid black;
+            padding:15px;
+            box-sizing: border-box;
+            margin:0;
+            font-size:15px;
+            color:#4db8ff;
+        }
+
+        .right-menu-elem:hover{
+            background-color: #0765cf;
+
+        }
+
+
+        .contact {
+            position: absolute;
+            width: 500px;
+            height: 550px;
+            right: 300px;
+            display: none;
+            background-color: white;
+            top: 0;
+            animation: transition 2.5s ease-in;
+            border:1px solid black;
+            padding:10px;
+            box-sizing:border-box;
+            z-index:2;
+        }
+        .contact-nav-bar{
+            position:relative;
+            display:inline-block;
+            height:40px;
+            width:30%;
+            top:20px;
+            text-align:center;
+            z-index:1;
+            color:black;
+            font-weight:bold;
+        }
+        .contact-nav-bar:hover{
+            border-bottom:2px solid #4db8ff;
+            box-sizing:border-box;
+        }
+
+        .form1{
+            position:relative;           
+            top:30px;
+            width:auto;
+            height:auto;
+            z-index:1;
+        }
+
+        .form1 > label {
+            position:absolute;
+            display:inline-block;
+            width:100px;
+            height:15px;
+            top:10px;
+            font-size:15px;
+            color:#999999;            
+        }
+
+        .form1 > input{    
+            position:relative;        
+            height:30px;
+            width:150px;
+            display:inline-block;
+            margin:2px; 
+            border-radius: 2px;
+            padding:10px;
+            box-sizing: border-box;
+            top:30px;
+            border:1px solid #999999;
+        }
+
+        .form2{
+            position:relative;           
+            top:100px;
+            width:auto;
+            height:auto;
+            z-index:1;
+        }
+
+        .form2 > label {
+            position:absolute;
+            display:inline-block;
+            width:100px;
+            height:15px;
+            top:10px;
+            font-size:15px;
+            color:#999999;            
+        }
+
+        .form2 > input{    
+            position:relative;        
+            height:30px;
+            width:150px;
+            display:inline-block;
+            margin:2px; 
+            border-radius: 2px;
+            padding:10px;
+            box-sizing: border-box;
+            top:30px;
+            border:1px solid #999999;
+        }
+
+        .form2 > input:nth-last-child(1) {
+            width:310px;
+        }
+
+        .form3{
+            position:relative;           
+            top:150px;
+            width:auto;
+            height:auto;
+            z-index:1;
+        }
+
+
+        .form3 > label, select {
+            position:absolute;
+            display:inline-block;
+            width:100px;
+            height:15px;
+            top:10px;
+            font-size:15px;
+            color:#999999;            
+        }
+
+        .form3 > input, select{    
+            position:relative;        
+            height:30px;
+            width:150px;
+            display:inline-block;
+            margin:2px; 
+            border-radius: 2px;
+            box-sizing: border-box;
+            top:5px;
+            border:1px solid #999999;
+            color:black;
+            padding:10px;
+        }
+
+        .form3 > select{    
+            padding:0;
+            line-height: 10px;
+        }
+
+        .form4-checkbox{
+            position:relative;           
+            top:180px;
+            width:450;
+            height:150px;
+            z-index:1;
+            font-size:15px;
+            color:black;
+        }
+
+        .form4-checkbox > label{
+            position:absolute;
+            box-sizing:border-box;
+        }
+
+
+        .form4-checkbox > input{
+            width:15px;
+            height:15px;
+            color:blue;
+        }
+
+        .footer-buttons{
+            position:absolute;
+            width:480px;
+            height:100px;
+            bottom:10px;
+            padding:15px;
+            box-sizing: border-box;
+            display:inline-block;
+            z-index:1;
+        }
+
+        .footer-buttons1{
+            position:absolute;
+            top:30px;
+            left:0;
+            width:180px;
+            height:40px;
+            font-size:15px;
+            padding:10px;
+            box-sizing: border-box;    
+            color:#999999;
+            border: 1px solid #999999;
+            text-align:center;  
+        }
+
+        .footer-buttons2{
+            position:absolute;
+            top:30px;
+            right:0;
+            width:180px;
+            height:40px;
+            background:#009933;
+            font-size:15px;
+            padding:10px;
+            box-sizing: border-box;    
+            color:white;
+            border: 1px solid #999999; 
+            float:right;
+            text-align:center;
+        }
+
+        .footer-buttons1:hover{
+            border: 1px solid  #999999; 
+            background-color:#bfbfbf;
+            color:white;
+        }
+
+        .footer-buttons2:hover{ 
+            background-color:#00e64d;
+        }
+
+
+        
+        
+    </style>
+</head>
+
+<body>
+           <div class="shopping-cart">Shopping Cart
+            <div class="right-menu">
+                <div class="right-menu-elem">Vans Authentic Black</div>
+                <div class="right-menu-elem">KevoCup inserve 24-4ml</div>
+                <div class="right-menu-elem">Ucon Kalled Jacket</div>
+                <div class="right-menu-elem">Vans Sunglasses</div>
+                <div class="right-menu-elem">Weic HS Sweater</div>
+            </div>
+            <div class="contact">
+                    <div class="contact-nav-bar">Shipping</div>
+                    <div class="contact-nav-bar">Payment</div>
+                    <div class="contact-nav-bar">Confirmation</div>
+                <form class="form1">
+                    <label for="fname">First name</label>
+                    <input type="text" id="fname" name="fname">
+                    <label for="lname">Last name</label>
+                    <input type="text" id="lname" name="lname">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email">
+                </form>
+
+                <form class="form2">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                    <label for="adress">Adress</label>
+                    <input type="text" id="Adress" name="Adress">
+                </form>
+                <form class="form3">
+                    <label for="country">Country</label><br>
+                    <select id="country" name="country">
+                        <option value="Romania">Romania</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Ucraina">Ucraina</option>
+                    </select>
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city">
+                    <label for="zipcode">ZIP Code</label>
+                    <input type="text" id="zipcode" name="zipcode">
+                </form>
+
+                <form class="form4-checkbox">
+                    <input type="checkbox" id="check1" name="check1" value="Check1">
+                    <label for="check1">My shipping and billing information is the same</label><br>
+                    <br>
+                    <input type="checkbox" id="check2" name="check2" value="Check2">
+                    <label for="check2">Create a password for easier account access</label>
+                </form>
+
+                <div class="footer-buttons">
+                    <div class="footer-buttons1">Return to store</div>
+                    <div class="footer-buttons2">Continue</div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+</body>
+
+</html>
